@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Code for the custom block module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function custom_block_theme($existing, $type, $theme, $path) {
+  $service = \Drupal::service('custom_block.custom_services');
+  $node_title = $service->getServiceData();
+  return array(
+    'tcdev' =>
+      array(
+        'variables' => array(
+          'title' => 'Default title',
+          'description' => NULL,
+          'list' => $node_title
+        ),
+      ),
+  );
+}
+

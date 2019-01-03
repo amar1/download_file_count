@@ -1,0 +1,3 @@
+services:
+  custom_block.custom_services:
+    class: Drupal\custom_block\Services\CustomService
